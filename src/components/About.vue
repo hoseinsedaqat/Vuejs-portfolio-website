@@ -14,82 +14,18 @@
       recusandae?
     </p>
     <h4>My Skills</h4>
-    <h6 class="font-weight-bold">Html:</h6>
-    <div class="progress">
-      <div
-        class="progress-bar bg-success"
-        role="progressbar"
-        aria-valuenow="90"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        style="width: 90%"
-      ></div>
-    </div>
-    <h6 class="font-weight-bold">Css:</h6>
-    <div class="progress">
-      <div
-        class="progress-bar bg-success"
-        role="progressbar"
-        aria-valuenow="85"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        style="width: 85%"
-      ></div>
-    </div>
-    <h6 class="font-weight-bold">Sass:</h6>
-    <div class="progress">
-      <div
-        class="progress-bar bg-success"
-        role="progressbar"
-        aria-valuenow="75"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        style="width: 75%"
-      ></div>
-    </div>
-    <h6 class="font-weight-bold">Bootstrap:</h6>
-    <div class="progress">
-      <div
-        class="progress-bar bg-success"
-        role="progressbar"
-        aria-valuenow="95"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        style="width: 95%"
-      ></div>
-    </div>
-    <h6 class="font-weight-bold">JavaScript:</h6>
-    <div class="progress">
-      <div
-        class="progress-bar bg-success"
-        role="progressbar"
-        aria-valuenow="80"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        style="width: 80%"
-      ></div>
-    </div>
-    <h6 class="font-weight-bold">Vuejs:</h6>
-    <div class="progress">
-      <div
-        class="progress-bar bg-success"
-        role="progressbar"
-        aria-valuenow="75"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        style="width: 75%"
-      ></div>
-    </div>
-    <h6 class="font-weight-bold">Python:</h6>
-    <div class="progress mb-3">
-      <div
-        class="progress-bar bg-success"
-        role="progressbar"
-        aria-valuenow="70"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        style="width: 70%"
-      ></div>
+    <div v-for="skill in skillProgress" :key="skill">
+      <h6>{{ skill.title }}</h6>
+      <div class="progress">
+        <div
+          class="progress-bar bg-success"
+          role="progressbar"
+          :aria-valuenow="`${skill.vNow}`"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          :style="{ width: skill.vStyle }"
+        ></div>
+      </div>
     </div>
     <h4>My Resume:</h4>
     <p>
@@ -103,6 +39,20 @@
 <script>
 export default {
   name: "About",
+  data() {
+    return {
+      // define my Skills
+      skillProgress: [
+        { title: "Html:", vNow: 90, vStyle: "90%" },
+        { title: "Css:", vNow: 85, vStyle: "85%" },
+        { title: "Sass:", vNow: 75, vStyle: "75%" },
+        { title: "Bootstrap:", vNow: 95, vStyle: "95%" },
+        { title: "Javascript:", vNow: 80, vStyle: "80%" },
+        { title: "Vuejs:", vNow: 75, vStyle: "75%" },
+        { title: "Python:", vNow: 70, vStyle: "70%" },
+      ],
+    };
+  },
 };
 </script>
 
