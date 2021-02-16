@@ -2,9 +2,13 @@
   <div>
     <nav id="navbar">
       <ul>
-        <router-link tag="li" to="/"><a>Home</a></router-link>
-        <router-link tag="li" to="/About"><a>About</a></router-link>
-        <router-link tag="li" to="/Contact"><a>Contact</a></router-link>
+        <router-link
+          tag="li"
+          v-for="(myheader, index) in myHeaderData"
+          :key="(myheader, index)"
+          :to="`${myheader.toDirection}`"
+          ><a>{{ myheader.name }}</a></router-link
+        >
       </ul>
     </nav>
   </div>
@@ -13,6 +17,15 @@
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+      myHeaderData: [
+        { toDirection: "/", name: "Home" },
+        { toDirection: "/About", name: "About" },
+        { toDirection: "/Contact", name: "Contact" },
+      ],
+    };
+  },
 };
 </script>
 
@@ -41,3 +54,4 @@ ul li a {
   color: #fff;
 }
 </style>
+
