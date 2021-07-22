@@ -6,4 +6,4 @@ export const router = [
     { path: '/', component: Home },
     { path: '/About', component: About },
     { path: '/Contact', component: Contact },
-]
+];
