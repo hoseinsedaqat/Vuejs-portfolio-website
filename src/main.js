@@ -4,6 +4,7 @@ import { router } from './Routes/Routes.js'
 import App from './App.vue'
 
 Vue.config.productionTip = false;
+
 Vue.use(VueRouter);
 
 const routers = new VueRouter({
