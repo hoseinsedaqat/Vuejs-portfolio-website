@@ -9,7 +9,7 @@ Vue.use(VueRouter);
 const routers = new VueRouter({
   routes: router,
   mode: 'history'
-})
+});
 
 new Vue({
   render: h => h(App),
